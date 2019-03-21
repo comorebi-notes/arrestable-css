@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.start-button {
+  display: inline-block;
+  padding: .75rem 1rem;
+  margin: 1rem;
+  border: 1px solid black;
+}
+input[type=radio] {
+  display: none;
+}
+.modal {
+  display: none;
+}
+input[name=modal]:checked + .modal {
+  display: block;
+  text-align: center;
+}
+input[name=modal]:checked + .modal:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .5);
+  z-index: 1;
+}
+.modal-message {
+  position: absolute;
+  left: calc(50% - 20%);
+  top: 12rem;
+  width: 40%;
+  margin: auto;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 4px;
+  z-index: 2;
+}
+.modal-close-button {
+  position: absolute;
+  right: 2rem;
+  z-index: 3;
+  font-weight: bold;
+  color: #aaa;
+  cursor: pointer;
+}
+.modal-close-button:hover {
+  opacity: .5;
+}
+input[name=shock]:checked + .shock {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  animation: shock .1s ease 0s infinite normal forwards;
+}
+@keyframes shock {
+  0% {
+    background-color: #f00;
+  }
+  33% {
+    background-color: #0f0;
+  }
+  66% {
+    background-color: #00f;
+  }
+  100% {
+    background-color: #f00;
+  }
+}
